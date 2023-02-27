@@ -1,7 +1,10 @@
 package page;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import data.DataHelper;
+
+import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -20,7 +23,14 @@ public class LoginPage {
     }
     public void verifyErrorNotificationVisibility (){
         errorNotification.shouldBe(visible);
+    }
+    public void clickButton() {
+        loginButton.click();
 
+    }
+    public void blockedNotification (){
+        errorNotification.shouldHave(Condition.text("Пользователь заблокирован"));
+    }
 
-    }}
+}
 
