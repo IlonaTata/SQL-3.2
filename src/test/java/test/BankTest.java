@@ -11,7 +11,7 @@ import page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static page.LoginPage.loginButton;
+
 
 
 public class BankTest {
@@ -19,7 +19,7 @@ public class BankTest {
 
     @AfterAll
     static void tearDown() {
-        DataHelper.clearAuthCodesTable();
+        SqlHelper.cleanDataBase();
     }
 
     static void cleanBase() {
